@@ -1,9 +1,11 @@
+/* Basic Styling */
 body {
     background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
     min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif, 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 .navbar {
@@ -12,6 +14,11 @@ body {
     display: flex;
     justify-content: center;
     padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .navbar a {
@@ -42,6 +49,7 @@ body {
     background: linear-gradient(to right, #27ae60, #2ecc71);
 }
 
+/* Containers */
 .container {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 8px;
@@ -49,6 +57,7 @@ body {
     padding: 30px;
     max-width: 1200px;
     margin: 20px auto;
+    animation: fadeIn 0.5s ease-in;
 }
 
 .card {
@@ -62,8 +71,11 @@ body {
     background: linear-gradient(to right, #2c3e50, #34495e);
     color: white;
     padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -91,10 +103,11 @@ tr:hover {
     transition: background-color 0.3s ease;
 }
 
+/* Button Styling */
 .btn-primary {
     background: linear-gradient(to right, #2c3e50, #34495e);
     border: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
     padding: 10px 20px;
     border-radius: 5px;
     text-transform: uppercase;
@@ -107,18 +120,44 @@ tr:hover {
     background: linear-gradient(to right, #34495e, #2c3e50);
 }
 
+/* Form Inputs */
 .form-control, .form-select {
     border-radius: 5px;
     padding: 12px;
     background: rgba(255,255,255,0.9);
     border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .card-header {
+        font-size: 18px;
+    }
+
+    .btn-primary {
+        padding: 8px 18px;
+    }
+
+    .form-control, .form-select {
+        padding: 10px;
+    }
 }
 
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-.container, .card {
-    animation: fadeIn 0.5s ease-in;
 }
