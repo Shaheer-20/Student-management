@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <form method="POST" action="">
             <div class="mb-3">
-                <label for="usn" class="form-label">USN</label>
+                <label for="usn" class="form-label">USN NO</label>
                 <input type="text" class="form-control" id="usn" name="usn" required>
             </div>
             <div class="mb-3">
